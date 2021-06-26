@@ -5,7 +5,7 @@ module.exports = {
     name: "votar",
     description: "Para votar no bot",
     usage: "",
-    aliases: ["vote", " vt"],
+    aliases: ["vote", "vt"],
   },
 
   run: async function (client, message, args) {

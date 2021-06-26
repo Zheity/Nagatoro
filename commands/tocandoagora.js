@@ -6,7 +6,7 @@ module.exports = {
     name: "tocandoagora",
     description: "Para mostrar a música que está tocando no momento",
     usage: "",
-    aliases: ["nowplaying"],
+    aliases: ["nowplaying","np"],
   },
 
   run: async function (client, message, args) {
