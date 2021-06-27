@@ -6,7 +6,7 @@ module.exports = {
     name: "pularpara",
     description: "Pule para o número da fila selecionado",
     usage: "pularpara <numero>",
-    aliases: ["skipto"],
+    aliases: ["skipto","skt"],
   },
 
   run: async function (client, message, args) {
