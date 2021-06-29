@@ -13,6 +13,17 @@ const client = new Client();
 client.commands = new Collection();
 client.queue = new Map();
 
+const { GiveawaysManager } = require('discord-giveaways');
+client.giveawaysManager = new GiveawaysManager(client, {
+    storage: "./database.json",
+    updateCountdownEvery: 3000,
+    default: {
+        botsCanWin: false,
+        embedColor: "#0096ff",
+        reaction: "🎉"
+    }
+});
+
 fs.readdir(__dirname + "/events/", (err, files) => {
     if (err) return console.error(err);
     files.forEach((file) => {
