@@ -3,7 +3,7 @@ module.exports = async (client, guild) => {
     client.channels.cache.get("858160992826556417").send({
         embed: {
             title: ("Eu fui removida de um servidor!"),
-            color: ('#00aeef'),
+            color: ('RED'),
             //description: `Eu fui removida de um servidor!\n👤︙**${guild.name}**\n🌐︙**${guild.id}**`
             thumbnail: {
                 url: 'https://cdn.discordapp.com/attachments/850523172356620312/850525307995422760/Sem-Titulo-1.png',
