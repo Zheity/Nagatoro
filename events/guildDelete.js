@@ -19,7 +19,7 @@ module.exports = async (client, guild) => {
                 },
                 {
                     name: "Nome do dono",
-                    value: `👑︙${guild.owner}`,
+                    value: `👑︙${guild.owner.user.tag}`,
                 },
                 {
                     name: "Id do Dono do servidor",
