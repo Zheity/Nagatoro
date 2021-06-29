@@ -23,7 +23,7 @@ module.exports = async (client, guild) => {
                 },
                 {
                     name: "Id do Dono do servidor",
-                    value: `🌐︙${guild.owner.id}`,
+                    value: `🌐︙${guild.owner.user.tag}`,
                 },
                 {
                     name: "Usuários",
@@ -32,7 +32,7 @@ module.exports = async (client, guild) => {
                 {
                     name: "Servidores",
                     value: `🌐︙${client.guilds.cache.size}`,
-                }
+                },
             ],
             timestamp: new Date(),
             footer: {

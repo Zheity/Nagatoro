@@ -32,7 +32,7 @@ module.exports = async (client, guild) => {
                 {
                     name: "Servidores",
                     value: `🌐︙${client.guilds.cache.size}`,
-                }
+                },
             ],
             timestamp: new Date(),
             footer: {
