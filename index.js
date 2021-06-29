@@ -1,6 +1,6 @@
 require("dotenv").config();
 const express = require("express");
-const mongoose = require('mongoose');
+const Guild = require("./database/Schemas/Guild");
 const app = express();
 const port = 3000;
 app.get('/', (req, res) => res.send('Olá, Mundo'));
@@ -12,10 +12,6 @@ const { Collection, Client } = require("discord.js");
 const client = new Client();
 client.commands = new Collection();
 client.queue = new Map();
-
-client.config = {
-    prefix: process.env.PREFIX
-}
 
 fs.readdir(__dirname + "/events/", (err, files) => {
     if (err) return console.error(err);
@@ -38,15 +34,7 @@ fs.readdir("./commands/", (err, files) => {
     });
 });
 
-mongoose.connect(process.env.MONGODB_SRV, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useFindAndModity: false,
-})
-.then(()=>{
-    console.log("Conectado com sucesso a base de dados!");
-}).catch((err) =>{
-    console.log(err);
-});
+const dbIndex = require("./database/index.js");
+dbIndex.start();
 
 client.login(process.env.TOKEN)

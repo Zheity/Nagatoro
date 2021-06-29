@@ -1,9 +1,25 @@
+const Guild = require("../database/Schemas/Guild");
+const GetMention = (id) => new RegExp(`^<@!?${id}>( |)$`);
 module.exports = async (client, message) => {
     if (message.author.bot) return;
   
-    //Prefixes also have mention match
-    const prefixMention = new RegExp(`^<@!?${client.user.id}> `);
-    const prefix = message.content.match(prefixMention) ? message.content.match(prefixMention)[0] : client.config.prefix;
+    try {
+      const server = await Guild.findOne({ idS: message.guild.id });
+  
+      if (message.author.bot == true) return;
+      if (!server) await Guild.create({ idS: message.guild.id });
+  
+      var prefix = prefix;
+      prefix = server.prefix;
+  
+      if (message.content.match(GetMention(client.user.id))) {
+        message.channel.send(
+          `Olá ${message.author}, meu prefixo no servidor é **${prefix}**.`
+        );
+      }
+    } catch (err) {
+      if (err) console.error(err);
+    }
   
     if (message.content.indexOf(prefix) !== 0) return;
   
