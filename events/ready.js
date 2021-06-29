@@ -25,7 +25,7 @@ module.exports = async (client) => {
     client.user.setActivity(status, {
       type: "LISTENING",
     });
-  }, 1000);
+  }, 10000);
 
   console.log(`Conectado como ${client.user.username}`);
 };
