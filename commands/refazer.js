@@ -15,7 +15,7 @@ module.exports = {
         // Membro sem permissão
         if (!message.member.hasPermission('MANAGE_MESSAGES') && !message.member.roles.cache.some((r) => r.name === "Giveaways")) {
             const rerollSorteios = new Discord.MessageEmbed()
-                .setColor('#800000')
+                .setColor('RED')
                 .setTitle('Nagatoro Music | Sistema de Sorteios')
                 .addField('<a:unchecked:859371442546409512>  `Você precisa ter permissão para refazer sorteios.`', "** **")
                 .setFooter("Nagatoro Music © Todos os direitos reservados.", message.guild.iconURL());
@@ -60,7 +60,7 @@ module.exports = {
                 } else {
                     console.error(e);
                     const sError = new Discord.MessageEmbed()
-                        .setColor('#800000')
+                        .setColor('RED')
                         .setTitle('Nagatoro Music | Sistema de Sorteios')
                         .addField('<a:warn:859378191139471370>  `Aconteceu um erro ao tentar refazer o sorteio.`', "** **")
                         .setFooter("Nagatoro Music © Todos os direitos reservados.", message.guild.iconURL());
