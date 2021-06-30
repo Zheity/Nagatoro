@@ -24,7 +24,6 @@ module.exports.run = async(client, message,) => {
       if (err) console.error(err);
     }
 
-    require('events').EventEmitter.defaultMaxListeners = 500
 
     const args = message.content.slice(prefix.length).trim().split(/ +/g);
 
@@ -35,6 +34,8 @@ module.exports.run = async(client, message,) => {
     let command = client.commands.get(cmd)
 
     if(!command) command = client.commands.get(client.aliases.get(cmd));
+
+    require('events').EventEmitter.defaultMaxListeners = 500
     
     if(command) command.run(client, message, args) 
     
