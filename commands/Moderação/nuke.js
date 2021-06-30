@@ -18,6 +18,7 @@ module.exports = {
         await message.channel.delete()
         let embed = new MessageEmbed()
         .setTitle("Channel Limpo")
+        .setColor("#0096ff")
         .setDescription(reason)
         .setImage('https://media0.giphy.com/media/oe33xf3B50fsc/200.gif')
         await newchannel.send(embed)
