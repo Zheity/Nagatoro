@@ -1,0 +1,37 @@
+{
+  "name": "nagatoro",
+  "version": "1.2.6",
+  "description": "Nagatoro Bot",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@discordjs/opus": "^0.5.3",
+    "ascii-table": "^0.0.9",
+    "discord-giveaways": "^4.5.1",
+    "discord.js": "^12.5.3",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "ffmpeg": "^0.0.4",
+    "ffmpeg-static": "^4.4.0",
+    "fs": "^0.0.1-security",
+    "lyrics-finder": "^21.7.0",
+    "moment": "^2.29.1",
+    "mongoose": "^5.12.13",
+    "novelcovid": "^1.2.7",
+    "opusscript": "^0.0.8",
+    "random-puppy": "^1.1.0",
+    "scrape-yt": "^1.4.8",
+    "weather-js": "^2.0.0",
+    "youtube-sr": "^4.1.5",
+    "yt-search": "^2.9.0",
+    "ytdl": "^1.4.1",
+    "ytdl-core": "^4.8.3",
+    "ytdl-core-discord": "^1.3.1",
+    "ytpl": "^2.2.1"
+  }
+}
