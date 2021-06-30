@@ -6,7 +6,7 @@ module.exports = {
   usage: "[dev]",
   aliases: ["developer"],
 
-  run: async (client, message, args) => {
+  run: async (client, message, args, ed) => {
     if (
       message.author.id === "332328470380019713" ||
       message.author.id === "786941260971376650"
