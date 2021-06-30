@@ -1,13 +1,13 @@
 
 module.exports.run = async(client) => {
       // Contador Stats
-  const guild = client.guilds.cache.get("841672494111916043");
+  const guild = client.guilds.cache.get("858160992826556417");
   setInterval(function () {
-    var memberCountChannel = client.channels.cache.get("859538986830004225");
+    var memberCountChannel = client.channels.cache.get("858159556256202762");
     memberCountChannel.setName(`👤┆Usuários: ${client.users.cache.size}`);
-    var serverCountChannel = client.channels.cache.get("859539017728917544");
+    var serverCountChannel = client.channels.cache.get("858159594224353300");
     serverCountChannel.setName(`🌐┆Servidores: ${client.guilds.cache.size}`);
-    var voiceCountChannel = client.channels.cache.get("859539031469326356");
+    var voiceCountChannel = client.channels.cache.get("858159638519742464");
     voiceCountChannel.setName(
       `🎵┆Me Ouvindo: ${client.voice.connections.size}`
     );

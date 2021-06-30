@@ -1,6 +1,6 @@
 module.exports.run = async (client, guild) => {
 
-    client.channels.cache.get("859589500896149504").send({
+    client.channels.cache.get("858160992826556417").send({
         embed: {
             title: ("Eu fui adicionada em um novo servidor!"),
             color: ("#00aeef"),
