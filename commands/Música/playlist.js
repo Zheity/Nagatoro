@@ -129,7 +129,7 @@ async	function play(guild, song) {
     var online = afk[message.guild.id]
     if (!song){
       if (!online.afk) {
-        sendError("**👋┋Saindo do canal de voz porque acho que não tem músicas na fila. Se você gosta do bot, fique 24 horas nos sete dias da semana no canal de voz, escreva `!afk`**", message.channel)
+        sendError("**👋┋Saindo do canal de voz porque acho que não tem músicas na fila.**", message.channel)
         message.guild.me.voice.channel.leave();//If you want your bot stay in vc 24/7 remove this line :D
         message.client.queue.delete(message.guild.id);
       }
