@@ -25,6 +25,8 @@ module.exports.run = async(client, message,) => {
     }
 
 
+    if (message.content.indexOf(prefix) !== 0) return;
+  
     const args = message.content.slice(prefix.length).trim().split(/ +/g);
 
     const cmd = args.shift().toLowerCase();
