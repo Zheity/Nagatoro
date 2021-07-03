@@ -61,24 +61,42 @@ module.exports = {
     ];
     
     var rand = list[Math.floor(Math.random() * list.length)];
-    let user = message.mentions.users.first() || client.users.cache.get(args[0]);
+
+    const user = message.mentions.users.first() || client.users.cache.get(args[0]);
     if (!user) {
-    return message.reply('lembre-se de mencionar um usuário válido para abraçar!');
+      return message.channel.send('lembre-se de mencionar um usuário válido para abraçar!');
     }
-    /*
-    message.channel.send(`${message.author.username} **acaba de abraçar** ${user.username}! :heart:`, {files: [rand]});
-    */
-    let avatar = message.author.displayAvatarURL({format: 'png'});
-      const embed = new Discord.MessageEmbed()
-            .setTitle('Abraço')
-            .setColor('#0096ff')
-            .setDescription(`${message.author} Abraçou o ${user}`)
-            .setImage(rand)
-            .setTimestamp()
-            .setThumbnail(avatar)
-            .setFooter('© Nagatoro Music - https://nagatoro.waaclive.com')
-            .setAuthor(message.author.tag, avatar);
-      await message.channel.send(embed);
+
+    const avatar = message.author.displayAvatarURL({ format: 'png' });
+    const embed = new Discord.MessageEmbed()
+      .setTitle('Hug')
+      .setColor('#0096ff')
+      .setDescription(`${message.author} **abraçou** ${user}`)
+      .setImage(rand)
+      .setTimestamp()
+      .setThumbnail(avatar)
+      .setFooter('Reaja com ❤ para retribuir')
+      .setAuthor(message.author.tag, avatar);
+    await message.channel.send(`${message.author}`, embed).then((msg) => {
+      msg.react('❤')
+
+      const filter = (reaction, usuario) => reaction.emoji.name === '❤' && usuario.id === user.id;
+
+      const collector = msg.createReactionCollector(filter, { max: 1, time: 60000 });
+      collector.on('collect', () => {
+        const repeat = new Discord.MessageEmbed()
+          .setTitle('Hug')
+          .setColor('#0096ff')
+          .setDescription(`${user} **Abraçou** ${message.author}`)
+          .setThumbnail(avatar)
+          .setTimestamp()
+          .setImage(rand)
+          .setAuthor(message.author.tag, avatar);
+
+        message.channel.send(repeat)
+      })
+
+    })
 
   },
 };

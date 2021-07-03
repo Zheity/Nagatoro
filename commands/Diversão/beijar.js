@@ -33,7 +33,6 @@ module.exports = {
       'https://i.imgur.com/NmRqxau.gif',
       'https://i.imgur.com/Uh0UOMs.gif',
       'https://i.imgur.com/zBqxFnB.gif',
-      'https://i.imgur.com/NmRqxau.gif',
       'https://i.imgur.com/UdDgZdr.gif',
       'https://i.imgur.com/3t6KZGz.gif',
       'https://i.imgur.com/uiMsiDJ.gif',
@@ -42,26 +41,45 @@ module.exports = {
       'https://i.imgur.com/vScTlaf.gif',
       'https://i.imgur.com/1B0LMxf.gif'
     ];
-    
+
     var rand = list[Math.floor(Math.random() * list.length)];
-    let user = message.mentions.users.first() || client.users.cache.get(args[0]);
+    const user = message.mentions.users.first() || client.users.cache.get(args[0]);
+
+    if (user == client.user) return message.channel.send("🙅‍♀️ **|** Nah, eu não quero te beijar!")
     if (!user) {
-    return message.reply('lembre-se de mencionar um usuário válido para beijar!');
+      return message.channel.send('lembre-se de mencionar um usuário válido para beijar!');
     }
-    /*
-    message.channel.send(`${message.author.username} **acaba de beijar** ${user.username}! :heart:`, {files: [rand]});
-    */
+
     let avatar = message.author.displayAvatarURL({format: 'png'});
-      const embed = new Discord.MessageEmbed()
-            .setTitle('Kiss')
-            .setColor('#0096ff')
-            .setDescription(`${message.author} acaba de beijar ${user} :heart:`)
-            .setImage(rand)
-            .setTimestamp()
-            .setThumbnail(avatar)
-            .setFooter('© Nagatoro Music - https://nagatoro.waaclive.com')
-            .setAuthor(message.author.tag, avatar);
-      await message.channel.send(embed);
+    const embed = new Discord.MessageEmbed()
+      .setTitle('Kiss')
+      .setColor('#0096ff')
+      .setDescription(`${message.author} **beijou** ${user}`)
+      .setImage(rand)
+      .setThumbnail(avatar)
+      .setTimestamp()
+      .setFooter('Reaja com 😘 para retribuir')
+      .setTimestamp().setAuthor(message.author.tag, avatar);
+    await message.channel.send(`${message.author}`, embed).then((msg) => {
+      msg.react('😘')
+
+      const filter = (reaction, usuario) => reaction.emoji.name === '😘' && usuario.id === user.id;
+
+      const collector = msg.createReactionCollector(filter, { max: 1, time: 60000 });
+      collector.on('collect', () => {
+        const repeat = new Discord.MessageEmbed()
+          .setTitle('Kiss')
+          .setColor('#0096ff')
+          .setDescription(`😽 ${user} **Beijou** ${message.author}`)
+          .setThumbnail(avatar)
+          .setImage(rand)
+          .setTimestamp()
+          .setAuthor(message.author.tag, avatar);
+
+        message.channel.send(repeat)
+      })
+
+    })
 
   },
 };
