@@ -6,7 +6,7 @@
   <br>
 </h1>
 
-<h4 align="center">Music, Moderation, Trivia, Stream Alerts and Fully Modular.</h4>
+<h4 align="center">Music, Moderation, Setup, And more.</h4>
 
 <p align="center">
   <a href="https://discord.gg/F8F2SEHZjq">
