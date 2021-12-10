@@ -64,3 +64,14 @@ Made with the [**Lavalink**](https://github.com/freyacodes/Lavalink) with access
 # installation
 
 SOON
+
+# Plugins
+
+Red is fully modular, allowing you to load and unload plugins of your choice, and install 3rd party
+plugins directly from Discord! A few examples are:
+
+- Music bot
+- Moderation
+- Setup
+- Fun
+- And more
