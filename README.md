@@ -12,14 +12,8 @@
   <a href="https://discord.gg/F8F2SEHZjq">
     <img src="https://discordapp.com/api/guilds/133049272517001216/widget.png?style=shield" alt="Discord Server">
   </a>
-  <a href="https://pypi.org/project/Red-DiscordBot/">
-     <img alt="PyPI" src="https://img.shields.io/pypi/v/Red-Discordbot">
-  </a>
   <a href="https://github.com/discordjs/discord.js/">
      <img src="https://img.shields.io/badge/discord-js-blue.svg" alt="discord.js">
-  </a>
-  <a href="https://www.patreon.com/Red_Devs">
-    <img src="https://img.shields.io/badge/Support-Red!-red.svg" alt="Support Red on Patreon!">
   </a>
 </p>
 <p align="center">
