@@ -19,7 +19,7 @@
     <img alt="PyPI - Python Version" src="https://img.shields.io/pypi/pyversions/Red-Discordbot">
   </a>
   <a href="https://github.com/Rapptz/discord.py/">
-     <img src="https://img.shields.io/badge/discord-py-blue.svg" alt="discord.py">
+     <img src="https://img.shields.io/badge/discord-py-blue.svg" alt="discord.js">
   </a>
   <a href="https://www.patreon.com/Red_Devs">
     <img src="https://img.shields.io/badge/Support-Red!-red.svg" alt="Support Red on Patreon!">
@@ -47,8 +47,6 @@
   <a href="#overview">Overview</a>
   •
   <a href="#installation">Installation</a>
-  •
-  <a href="http://red-discordbot.readthedocs.io/en/stable/index.html">Documentation</a>
   •
   <a href="#plugins">Plugins</a>
   •
