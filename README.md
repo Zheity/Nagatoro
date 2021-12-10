@@ -15,9 +15,6 @@
   <a href="https://pypi.org/project/Red-DiscordBot/">
      <img alt="PyPI" src="https://img.shields.io/pypi/v/Red-Discordbot">
   </a>
-  <a href="https://www.python.org/downloads/">
-    <img alt="PyPI - Python Version" src="https://img.shields.io/pypi/pyversions/Red-Discordbot">
-  </a>
   <a href="https://github.com/discordjs/discord.js/">
      <img src="https://img.shields.io/badge/discord-js-blue.svg" alt="discord.js">
   </a>
