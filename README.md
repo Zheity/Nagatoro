@@ -52,8 +52,6 @@
   •
   <a href="#plugins">Plugins</a>
   •
-  <a href="#join-the-community">Community</a>
-  •
   <a href="#license">License</a>
 </p>
 
@@ -67,11 +65,14 @@ SOON
 
 # Plugins
 
-Red is fully modular, allowing you to load and unload plugins of your choice, and install 3rd party
-plugins directly from Discord! A few examples are:
+Nagatoro is fully modular, allowing you to load and unload plugins of your choice.
 
 - Music bot
 - Moderation
 - Setup
 - Fun
 - And more
+
+# license
+
+Released under the [GNU GPL v3](https://www.gnu.org/licenses/gpl-3.0.en.html) license.
